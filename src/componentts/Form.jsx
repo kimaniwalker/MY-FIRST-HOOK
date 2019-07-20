@@ -1,5 +1,7 @@
 import React from 'react';
 import useForm from '../utils/useForm'
+import '../utils/scss/pages/_home.scss';
+
 
 const Form = () => {
 
@@ -14,31 +16,42 @@ const Form = () => {
 
 
     return (
-        <form onSubmit={register}>
-            <label>name:</label>
-            <input
+        <main className="home">
+            <section className="container-fluid hello"> 
 
-                //Tie Value to values object || Set Default state
-                value={values.name || ''}
-                name="name"
-                //Reference handleChange function
-                onChange={handleChange}
-                type='text'
-            >
-            </input>
+                <form onSubmit={register}>
+                <label>name:</label>
+                <input
 
-            <label>handle:</label>
-            <input
-                value={values.handle || ''}
-                name="handle"
-                onChange={handleChange}
-                type='text'
-            >
-            </input>
+                    //Tie Value to values object || Set Default state
+                    value={values.name || ''}
+                    name="name"
+                    //Reference handleChange function
+                    onChange={handleChange}
+                    type='text'
+                >
+                </input>
 
-            <button
-            >Register</button>
-        </form>
+                <label>handle:</label>
+                <input
+                    value={values.handle || ''}
+                    name="handle"
+                    onChange={handleChange}
+                    type='text'
+                >
+                </input>
+
+                <button
+                >Register</button>
+            </form>
+
+            </section>
+
+            
+
+        </main>
+
+
     )
 
 

@@ -1,0 +1,11 @@
+main h1 {
+  text-align: center; }
+
+.about .hero {
+  background: #332333; }
+
+.home .hero {
+  background: green; }
+
+.home .hello {
+  background: #0091eb; }

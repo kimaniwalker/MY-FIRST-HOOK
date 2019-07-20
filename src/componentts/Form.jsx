@@ -1,40 +1,45 @@
-import React, {useState} from 'react';
+import React from 'react';
+import useForm from '../utils/useForm'
 
 const Form = () => {
 
-    const [name, setName] = useState('');
-    const [ handle, sethandle] = useState('');
+    //Set object to use useForm function
+    const [values, handleChange] = useForm();
 
     const register = e => {
         e.preventDefault();
-        console.log({ name, handle });
+        console.log(values);
     }
 
 
 
-return (
-    <form
-    onSubmit={register}>
-        <label>name:</label>
-        <input
-        value={name}
-        onChange={e => setName(e.target.value)}
-        type='text'
-        >
-        </input>
+    return (
+        <form onSubmit={register}>
+            <label>name:</label>
+            <input
 
-        <label>handle:</label>
-        <input
-        value={handle}
-        onChange={e => sethandle(e.target.value)}
-        type='text'
-        >
-        </input>
+                //Tie Value to values object || Set Default state
+                value={values.name || ''}
+                name="name"
+                //Reference handleChange function
+                onChange={handleChange}
+                type='text'
+            >
+            </input>
 
-        <button
-        >Register</button>
-    </form>
-)
+            <label>handle:</label>
+            <input
+                value={values.handle || ''}
+                name="handle"
+                onChange={handleChange}
+                type='text'
+            >
+            </input>
+
+            <button
+            >Register</button>
+        </form>
+    )
 
 
 }
